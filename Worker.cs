@@ -20,12 +20,19 @@ namespace EmailJobService
 
             try
             {
-                var isEmailSend = await _emailService.SendEmailAsync(
-                     "Scheduled Email",
-                     "<p>This is a test email from Azure Container App Job.</p>"
-                 );
 
-                if (isEmailSend == 0) Console.WriteLine("Email job completed.");
+                //var isEmailSend = await _emailService.SendEmailAsync(
+                //     "Scheduled Email",
+                //     "<p>This is a test email from Azure Container App Job.</p>"
+                // );
+
+
+                //if (isEmailSend == 0) Console.WriteLine("Email job completed.");
+
+                // Wait for 2000 milliseconds (2 seconds)
+                await Task.Delay(2000);
+                Console.WriteLine("Email job completed.");
+
             }
             catch (Exception ex)
             {
